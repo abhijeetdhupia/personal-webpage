@@ -1,0 +1,32 @@
+---
+import { FaGithub } from 'react-icons/fa';
+
+const projects = [
+  {
+    title: "Odometer Reading Detection",
+    tech: "Python, PyTorch, OpenCV, Git",
+    description: "Built a YOLOv5-nano + OCR pipeline to read odometers; achieved 90.75% accuracy on 3,460 test images after training on 6,000 labeled images; improved robustness to glare/blur via targeted augmentations and post-processing.",
+    link: "https://github.com/abhijeetdhupia"
+  }
+];
+---
+
+<section id="projects" class="py-20 border-t border-gray-100">
+  <h3 class="text-3xl font-bold text-gray-900 mb-12">Projects</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {projects.map((project) => (
+      <div class="group p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/5 transition-all">
+        <div class="flex items-center justify-between mb-4">
+          <h4 class="text-xl font-bold text-gray-900">{project.title}</h4>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-lg text-gray-600 hover:text-blue-600 shadow-sm">
+            <FaGithub size={20} />
+          </a>
+        </div>
+        <p class="text-sm font-medium text-blue-600 mb-4">{project.tech}</p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          {project.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+const publications = [
+  {
+    authors: "A. Dhupia, J. R. Harish Kumar, J. Andrade, and K. V. Rajagopal",
+    title: "Automatic segmentation of lumen intima layer in longitudinal mode ultrasound images",
+    venue: "2020 42nd Annual International Conference of the IEEE Engineering in Medicine Biology Society (EMBC)",
+    year: "2020",
+    pages: "2125–2128",
+    link: "https://ieeexplore.ieee.org/abstract/document/9175831/"
+  }
+];
+---
+
+<section id="publications" class="py-20 border-t border-gray-100">
+  <h3 class="text-3xl font-bold text-gray-900 mb-12">Publications</h3>
+  <div class="space-y-8">
+    {publications.map((pub) => (
+      <div class="p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <p class="text-sm text-gray-500 mb-2">{pub.year}</p>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">{pub.title}</h4>
+        <p class="text-gray-700 font-medium mb-3">{pub.authors}</p>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p class="text-sm text-gray-500 italic">{pub.venue}</p>
+          <a href={pub.link} target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 group">
+            Read Publication
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

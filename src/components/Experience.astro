@@ -1,0 +1,74 @@
+---
+const experiences = [
+  {
+    role: "Senior Machine Learning Engineer",
+    company: "Bazaarvoice",
+    location: "Bangalore, India",
+    period: "Jan. 2025 – Present",
+    points: [
+      "Owned production migration of vector search from PostgreSQL/pgvector to Qdrant: designed cutover/backfill strategy, built ingestion + validation tooling, and scaled to 2.8B+ vectors by migrating 4+ TB of embeddings with operational monitoring and rollback readiness.",
+      "Authored a production-focused benchmark (Aurora pgvector vs Qdrant) to drive the platform decision: compared indexing/ingestion cost, resource usage, and latency; validated HNSW + product quantization retrieval quality (Precision@1 0.98).",
+      "Contributed to AI Review Summaries and Shopping Assistant initiatives: improved reliability of the vectorization → clustering → summarization pipeline serving 4 languages and 1000+ clients, and built an LLM RAG assistant over product descriptions + syndicated reviews for pilot rollout."
+    ]
+  },
+  {
+    role: "Senior Computer Vision Engineer",
+    company: "Sentryc",
+    location: "Berlin, Germany (Remote)",
+    period: "March 2024 – Sep. 2024",
+    points: [
+      "Built YOLO-based detection pipelines for copyright/brand enforcement across 8 ECA clubs, 5 NBA teams, and 14 kit manufacturers, driving a 99% reduction in image processing costs.",
+      "Reduced monthly costs by $5k+ by developing in-house models and processing ~3M images/month; improved scalability by deploying on AWS ECS (Fargate) and using SQL for data management."
+    ]
+  },
+  {
+    role: "Computer Vision Engineer",
+    company: "Big Vision",
+    location: "Bangalore, India",
+    period: "Oct. 2021 – March 2024",
+    points: [
+      "Delivered end-to-end ML systems across CV/NLP for multiple clients (collectibles pricing, OCR/text understanding, taxonomy/classification), translating ambiguous requirements into production pipelines and measurable model improvements.",
+      "Built a document fraud detection pipeline achieving 90%+ accuracy; improved OCR throughput by 60% via optimized preprocessing, batching, and inference performance tuning.",
+      "Shipped production features powering iOS/Android experiences; contributed Prompt Engineering content to OpenCV’s Generative AI courses backed by $150k+ Kickstarter funding."
+    ]
+  },
+  {
+    role: "Deep Learning Research Assistant",
+    company: "Indian Institute of Science, Bangalore",
+    location: "Bangalore, India",
+    period: "Aug. 2019 – Aug. 2021",
+    points: [
+      "Developed deep learning models for medical imaging (endoscopy segmentation; OCT pathology classification) in collaboration with IAF Command Hospital and Carl Zeiss India; partnered with QpiAI to integrate models into a cloud-based healthcare AI workflow."
+    ]
+  }
+];
+---
+
+<section id="experience" class="py-20 border-t border-gray-100">
+  <h3 class="text-3xl font-bold text-gray-900 mb-12">Experience</h3>
+  <div class="space-y-12">
+    {experiences.map((exp) => (
+      <div class="relative pl-8 border-l-2 border-gray-100 hover:border-blue-500 transition-colors">
+        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-white border-2 border-blue-600 rounded-full"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+          <div>
+            <h4 class="text-xl font-bold text-gray-900">{exp.role}</h4>
+            <p class="text-lg font-medium text-blue-600">{exp.company}</p>
+          </div>
+          <div class="text-right mt-1 md:mt-0">
+            <p class="text-sm font-semibold text-gray-900">{exp.period}</p>
+            <p class="text-sm text-gray-500">{exp.location}</p>
+          </div>
+        </div>
+        <ul class="space-y-3">
+          {exp.points.map((point) => (
+            <li class="text-gray-600 leading-relaxed flex gap-3">
+              <span class="mt-2 w-1.5 h-1.5 bg-gray-300 rounded-full shrink-0"></span>
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
